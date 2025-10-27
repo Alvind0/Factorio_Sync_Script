@@ -1,10 +1,10 @@
 @echo off
-cd %APPDATA%/Factorio
+cd "$env:appdata/Facorio"
 git pull
 
-start "" /wait "c:\Program Files\Factorio\bin\x64\factorio.exe"
+start "" /wait "C:\Games\Factorio\bin\x64\factorio.exe"
 
-cd %APPDATA%/Factorio
+cd "$env:appdata/Facorio"
 for /f "delims=" %%a in ('powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-Date -Format 'yyyy/MM/dd HH:mm'"') do set "DATETIME=%%a"
 
 git add .
